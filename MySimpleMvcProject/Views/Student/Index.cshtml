@@ -16,7 +16,9 @@
     <p>
         @using (Html.BeginForm("Add", "Student", FormMethod.Post))
         {
+            <b>Name of the student: </b>
             @Html.TextBoxFor(c => c.Name)
+            <b>Surname of the student: </b>
             @Html.TextBoxFor(m => m.Surname)
             <input type="submit" value="Add" />
         }
@@ -64,7 +66,7 @@
 <script type="text/javascript">
 //i'm using jquery ready event which will call the javascript chunk after the page has completed loading
 $(document).ready(function(){
-var dSuccess = '@StudentList.isDeleted'.toLowerCase;
+var dSuccess = '@StudentList.isDeleted'.toLowerCase; // without toLowerCase() method, data comes as 'False' and causes error
 if(dSuccess == 'true'){
     alert("Successfully Deleted");
 }

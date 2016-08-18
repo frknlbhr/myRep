@@ -36,8 +36,8 @@ namespace MySimpleMvcProject.Models
 
         public static void SortStudentList()
         {
-            var sortedList = studentList.OrderByDescending(d => d.RegisterDate);
-            studentList = sortedList.ToList();
+            var sortedList = studentList.OrderByDescending(d => d.RegisterDate); // New list, type is IOrderedEnumerable<Student>
+            studentList = sortedList.ToList(); // Converted back to Student list by ToList()
         }
     }
 }
